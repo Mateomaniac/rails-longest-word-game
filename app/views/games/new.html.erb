@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>New Game</h1>
+  <div><%= @letters %></div>
+    <form action="score" method="post" data-turbo="false">
+      <div class="row">
+        <div class="col-4 form-floating">
+          <input type="text" class="form-control" id="floatingInput" name="word" placeholder="What is the longest word you can find ?">
+          <label for="floatingInput">What is the longest word you can find ?</label>
+        </div>
+        <div class="col-4">
+          <input class="btn btn-primary w-80" type="submit" value="Play!">
+        </div>
+      </div>
+    <%= hidden_field_tag :grid, @letters %>
+    <%= hidden_field_tag :starttime, @starttime %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    </form>
+</div>
